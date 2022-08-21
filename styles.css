@@ -1,0 +1,40 @@
+body{
+    background-color: rgb(98, 99, 96);
+    color: azure;
+}
+
+
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    border: 1px;
+
+    
+    
+}
+
+.button{
+    font-size: 10rem;
+    background-color: Transparent;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    transition: 100ms;
+    
+}
+    
+
+
+.scores {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: 1px;
+}
+
+.button:hover{
+    transform: scale(1.2);
+}
