@@ -1,6 +1,8 @@
 let computerScore = 0;
 let playerScore = 0;
 
+//Computer function, works for now. 
+
 function computerPlay() {
   const rps = Math.floor(Math.random() * 3);
   if (rps === 0) {
@@ -11,6 +13,7 @@ function computerPlay() {
     return "scissors";
   }
 }
+
 
 function playRound(playerSelection, computerSelection) {
   if (playerSelection === "rock") {
@@ -50,7 +53,7 @@ function playRound(playerSelection, computerSelection) {
 
 function game() {
   for (let i = 0; i < 5; i++) {
-    let playerSelection = prompt("Rock, Paper, Scissors?").toLowerCase();
+    
     let computerSelection = computerPlay();
     console.log(playRound(playerSelection, computerSelection));
     console.log(`Player wins ${playerScore}, total score`);
@@ -58,4 +61,27 @@ function game() {
   }
 }
 
-game();
+
+
+//UI elements
+
+const playerSelection = document.querySelectorAll('[data-selection]', playRound)
+
+const computerSelection = computerPlay();
+
+
+
+playerSelection.forEach(selectionButton => {
+  selectionButton.addEventListener('click', e =>{
+   const selectionName = selectionButton.dataset.selection
+   makeSelection(selectionName)
+  })
+})
+
+console.log(computerSelection);
+
+
+
+// function makeSelection(selection){
+//   console.log(selection, computerSelection)
+// }
